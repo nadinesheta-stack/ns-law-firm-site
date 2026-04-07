@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NS Law Firm PLLC</title>
+  <meta name="description" content="NS Law Firm PLLC provides virtual immigration support for families with transparent attorney fees and online booking options." />
+  <style>
+    :root {
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --sky-600: #0284c7;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--slate-900);
+      background: var(--white);
+      line-height: 1.5;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue-50), #ffffff 45%, #f0f9ff);
+    }
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(42px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .orb.one { width: 260px; height: 260px; right: -70px; top: -60px; background: var(--blue-100); }
+    .orb.two { width: 260px; height: 260px; left: -80px; bottom: -90px; background: #dbeafe; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0;
+    }
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-700);
+    }
+    .pill {
+      display: inline-flex;
+      border: 1px solid var(--blue-100);
+      background: rgba(255,255,255,0.86);
+      color: var(--blue-700);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--slate-900); color: #fff; }
+    .btn-secondary { background: #fff; color: var(--slate-700); border-color: var(--slate-300); }
+    .btn-blue { background: var(--blue-700); color: #fff; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      padding: 54px 0 72px;
+      position: relative;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 4.2rem);
+      line-height: 1.02;
+      margin: 18px 0 0;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      max-width: 640px;
+      font-size: 18px;
+      color: var(--slate-600);
+      margin-top: 22px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.10);
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sky-600);
+    }
+    .feature-list { margin-top: 18px; display: grid; gap: 14px; }
+    .feature {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border: 1px solid var(--slate-100);
+      border-radius: var(--radius-lg);
+      background: #fff;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--blue-600); margin-top: 8px; flex: 0 0 10px; }
+    section { padding: 78px 0; }
+    h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin: 10px 0 0;
+      letter-spacing: -0.03em;
+    }
+    .section-copy { font-size: 18px; color: var(--slate-600); max-width: 760px; margin-top: 16px; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 34px;
+    }
+    .service-card, .panel, .cta-box, .price-shell {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .service-card { padding: 28px; }
+    .service-card h3 { margin: 0; font-size: 22px; }
+    .service-card p { margin: 14px 0 0; color: var(--slate-600); }
+    .price-shell { overflow: hidden; margin-top: 32px; }
+    .price-top {
+      border-bottom: 1px solid var(--slate-200);
+      background: rgba(239,246,255,0.8);
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .price-top p { margin: 0; }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 22px;
+      border-top: 1px solid var(--slate-200);
+    }
+    .price-row:first-of-type { border-top: 0; }
+    .fee { color: var(--blue-700); font-weight: 700; font-size: 18px; }
+    .muted { color: var(--slate-600); }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .steps { display: grid; gap: 14px; }
+    .step {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--slate-900);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex: 0 0 40px;
+    }
+    .panel { padding: 28px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .cta-box {
+      padding: 30px;
+      background: linear-gradient(135deg, var(--slate-900), var(--blue-700));
+      color: #fff;
+    }
+    .cta-strip {
+      background: linear-gradient(90deg, var(--blue-700), var(--sky-600));
+      color: #fff;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: center;
+      padding: 24px;
+      background: rgba(239,246,255,0.6);
+      margin-bottom: 30px;
+    }
+    .pay-actions { display: grid; gap: 12px; }
+    .sticky-mobile {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      display: none;
+      gap: 10px;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--slate-200);
+    }
+    .sticky-mobile .btn { flex: 1; padding: 14px 16px; }
+    .footer-space { height: 0; }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .services,
+      .split,
+      .about-grid,
+      .payment-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 28px; padding-top: 24px; }
+      .price-top, .price-row, .cta-strip, header { flex-direction: column; align-items: stretch; }
+      .cta-strip { text-align: left; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      section { padding: 58px 0; }
+      .card, .service-card, .panel, .cta-box, .payment-grid, .cta-strip { padding: 22px; }
+      .lead, .section-copy { font-size: 16px; }
+      .price-row { align-items: flex-start; }
+      .sticky-mobile { display: flex; }
+      .footer-space { height: 92px; }
+      .btn { width: 100%; }
+      .actions { display: grid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="container">
+      <header>
+        <div class="brand">NS Law Firm PLLC</div>
+        <a class="btn btn-secondary" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Consultation</a>
+      </header>
+
+      <div class="hero-grid">
+        <div>
+          <div class="pill">Fully Virtual Immigration Support</div>
+          <h1>U.S. Immigration Support for Families</h1>
+          <p class="lead">NS Law Firm provides a streamlined, virtual experience focused on family-based immigration matters, with particular emphasis on marriage-based cases and clear, upfront attorney fee information.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://calendly.com/nsimmigrationlawfirm/30min">Schedule a Consultation</a>
+            <a class="btn btn-secondary" href="#pricing">View Pricing</a>
+            <a class="btn btn-secondary" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Petition Review</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Why clients choose NS Law Firm</div>
+          <div class="feature-list">
+            <div class="feature"><span class="dot"></span><div>Virtual representation designed for busy couples and families</div></div>
+            <div class="feature"><span class="dot"></span><div>Clear, organized guidance throughout the process</div></div>
+            <div class="feature"><span class="dot"></span><div>Focused practice built around family-based immigration matters</div></div>
+            <div class="feature"><span class="dot"></span><div>Professional, modern client experience from consultation to filing</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="eyebrow" style="color: var(--blue-700);">Services</div>
+      <h2>Focused, Virtual Immigration Support</h2>
+      <p class="section-copy">Designed for clients who want clarity, structure, and a professional process.</p>
+
+      <div class="services">
+        <div class="service-card">
+          <h3>Marriage-Based Green Cards</h3>
+          <p>Support for couples preparing adjustment of status and related family-based filings with a clear, organized process.</p>
+        </div>
+        <div class="service-card">
+          <h3>Family Immigration</h3>
+          <p>Virtual immigration support for qualifying family-based petitions and related applications.</p>
+        </div>
+        <div class="service-card">
+          <h3>Waivers &amp; Complex Cases</h3>
+          <p>Strategy-focused support for unlawful presence waivers, consular processing matters, and other more involved filings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="eyebrow" style="color: var(--blue-700);">Transparent Attorney Fees</div>
+      <h2>Clear pricing for common case types</h2>
+      <p class="section-copy">Attorney fees shown below do not include government filing fees unless specifically stated.</p>
+
+      <div class="price-shell">
+        <div class="price-top">
+          <div>
+            <p style="font-weight:700; color: var(--slate-900);">Need a Petition Review instead?</p>
+            <p class="muted">Book the dedicated Petition Review option here.</p>
+          </div>
+          <a class="btn btn-blue" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Book Petition Review</a>
+        </div>
+
+        <div class="price-row"><div>Marriage Adjustment of Status with Legal Entry</div><div class="fee">$3,000</div></div>
+        <div class="price-row"><div>Marriage without Legal Entry – I-130</div><div class="fee">$1,500</div></div>
+        <div class="price-row"><div>I-601 Waiver for Unlawful Presence</div><div class="fee">$4,500</div></div>
+        <div class="price-row"><div>Consular Process</div><div class="fee">$1,500</div></div>
+        <div class="price-row"><div>VAWA Based on Abuse</div><div class="fee">$4,500</div></div>
+        <div class="price-row"><div>Removal of Conditions</div><div class="fee">$2,000</div></div>
+        <div class="price-row"><div>Removal of Conditions with Waiver</div><div class="fee">$4,500</div></div>
+        <div class="price-row"><div>Naturalization</div><div class="fee">$2,500</div></div>
+        <div class="price-row"><div>Naturalization with Criminal Record</div><div class="fee">$4,500</div></div>
+        <div class="price-row"><div>Military Parole in Place</div><div class="fee">$4,500</div></div>
+        <div class="price-row"><div>Parent Adjustment of Status</div><div class="fee">$2,500 per parent</div></div>
+        <div class="price-row"><div>K-1 Fiancée Visa</div><div class="fee">$2,000</div></div>
+        <div class="price-row"><div>K-1 Adjustment of Status</div><div class="fee">$2,000</div></div>
+        <div class="price-row"><div>EB-2 NIW</div><div class="fee">$6,000</div></div>
+        <div class="price-row"><div>EB-2 NIW Adjustment of Status</div><div class="fee">$2,500</div></div>
+        <div class="price-row"><div>F-1 Student Visa</div><div class="fee">$2,500</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--slate-50);">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">The Process</div>
+        <h2>A simpler way to move your case forward</h2>
+        <p class="section-copy">The goal is a process that feels organized, efficient, and easy to navigate from wherever you are.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div>Book a consultation</div></div>
+        <div class="step"><div class="step-num">2</div><div>Get a clear case strategy</div></div>
+        <div class="step"><div class="step-num">3</div><div>Receive a streamlined virtual process</div></div>
+        <div class="step"><div class="step-num">4</div><div>Move forward with confidence</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="payment-grid panel">
+        <div>
+          <div class="eyebrow" style="color: var(--blue-700);">Pay for Consultation</div>
+          <h2 style="font-size: clamp(1.6rem, 2.6vw, 2.3rem);">Prefer to pay online before booking?</h2>
+          <p class="section-copy" style="margin-top: 10px; font-size: 16px;">Use the same payment flow style as your ImmiKit setup. Replace the placeholder links below with your live checkout links before publishing.</p>
+        </div>
+        <div class="pay-actions">
+          <a class="btn btn-primary" href="#">Pay for Consultation</a>
+          <a class="btn btn-secondary" href="#">Pay with PayPal</a>
+        </div>
+      </div>
+
+      <div class="about-grid panel">
+        <div>
+          <div class="eyebrow" style="color: var(--blue-700);">About</div>
+          <h2>A modern, client-centered virtual law firm</h2>
+          <p class="section-copy">NS Law Firm focuses on helping clients navigate family-based immigration matters through a professional and accessible online experience. The firm is designed for people who want high-touch support without the limitations of a traditional office model.</p>
+        </div>
+        <div class="cta-box">
+          <div class="eyebrow" style="color: #bfdbfe;">Virtual Consultations</div>
+          <h3 style="font-size: 28px; margin: 16px 0 0;">Ready to get clarity on your case?</h3>
+          <p style="color: rgba(255,255,255,0.84); margin-top: 14px;">Start with a consultation to understand your options and the best next step for your situation.</p>
+          <div style="margin-top: 22px;"><a class="btn" style="background:#fff;color:var(--slate-900);" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Now</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-strip">
+        <div>
+          <div class="eyebrow" style="color: rgba(255,255,255,0.82);">NS Law Firm PLLC</div>
+          <h2 style="margin-top: 8px; color:#fff;">Book your consultation today</h2>
+          <p style="margin: 12px 0 0; color: rgba(255,255,255,0.86); max-width: 720px;">Clear guidance. Virtual convenience. A professional start to your immigration process.</p>
+        </div>
+        <a class="btn" style="background:#fff;color:var(--slate-900);" href="https://calendly.com/nsimmigrationlawfirm/30min">Schedule Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-space"></div>
+
+  <div class="sticky-mobile">
+    <a class="btn btn-primary" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Consult</a>
+    <a class="btn btn-blue" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Petition Review</a>
+  </div>
+</body>
+</html>
