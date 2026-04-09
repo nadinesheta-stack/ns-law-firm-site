@@ -3,447 +3,815 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NS Law Firm PLLC</title>
-  <meta name="description" content="NS Law Firm PLLC provides virtual immigration support for families with transparent attorney fees and online booking options." />
+  <title>NS Law Firm PLLC | Marriage & Family Immigration</title>
+  <meta name="description" content="Virtual immigration law firm focused on marriage-based immigration, family petitions, and waivers. Book a consultation with NS Law Firm PLLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
   <style>
-    :root {
-      --blue-50: #eff6ff;
-      --blue-100: #dbeafe;
-      --blue-600: #2563eb;
-      --blue-700: #1d4ed8;
-      --sky-600: #0284c7;
-      --slate-50: #f8fafc;
-      --slate-100: #f1f5f9;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-      --slate-900: #0f172a;
-      --white: #ffffff;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --max: 1120px;
+    :root{
+      --navy:#1f446d;
+      --navy-deep:#163552;
+      --cream:#f7f3ec;
+      --white:#ffffff;
+      --gold:#b9933f;
+      --gold-dark:#9f7c31;
+      --text:#1f1a17;
+      --muted:#6e6257;
+      --line:#e4dbcf;
+      --shadow:0 16px 45px rgba(18,24,32,.08);
+      --radius:24px;
+      --max:1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--slate-900);
-      background: var(--white);
-      line-height: 1.5;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      line-height:1.6;
     }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--blue-50), #ffffff 45%, #f0f9ff);
-    }
-    .orb {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(42px);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-    .orb.one { width: 260px; height: 260px; right: -70px; top: -60px; background: var(--blue-100); }
-    .orb.two { width: 260px; height: 260px; left: -80px; bottom: -90px; background: #dbeafe; }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 24px 0;
-    }
-    .brand {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue-700);
-    }
-    .pill {
-      display: inline-flex;
-      border: 1px solid var(--blue-100);
-      background: rgba(255,255,255,0.86);
-      color: var(--blue-700);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 14px;
-      box-shadow: var(--shadow);
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-      text-align: center;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--slate-900); color: #fff; }
-    .btn-secondary { background: #fff; color: var(--slate-700); border-color: var(--slate-300); }
-    .btn-blue { background: var(--blue-700); color: #fff; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-      padding: 54px 0 72px;
-      position: relative;
-    }
-    h1 {
-      font-size: clamp(2.25rem, 5vw, 4.2rem);
-      line-height: 1.02;
-      margin: 18px 0 0;
-      letter-spacing: -0.03em;
-    }
-    .lead {
-      max-width: 640px;
-      font-size: 18px;
-      color: var(--slate-600);
-      margin-top: 22px;
-    }
-    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-    .card {
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: 32px;
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.10);
-      backdrop-filter: blur(8px);
-    }
-    .eyebrow {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sky-600);
-    }
-    .feature-list { margin-top: 18px; display: grid; gap: 14px; }
-    .feature {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      border: 1px solid var(--slate-100);
-      border-radius: var(--radius-lg);
-      background: #fff;
-    }
-    .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--blue-600); margin-top: 8px; flex: 0 0 10px; }
-    section { padding: 78px 0; }
-    h2 {
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      line-height: 1.1;
-      margin: 10px 0 0;
-      letter-spacing: -0.03em;
-    }
-    .section-copy { font-size: 18px; color: var(--slate-600); max-width: 760px; margin-top: 16px; }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 34px;
-    }
-    .service-card, .panel, .cta-box, .price-shell {
-      border: 1px solid var(--slate-200);
-      border-radius: var(--radius-xl);
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .service-card { padding: 28px; }
-    .service-card h3 { margin: 0; font-size: 22px; }
-    .service-card p { margin: 14px 0 0; color: var(--slate-600); }
-    .price-shell { overflow: hidden; margin-top: 32px; }
-    .price-top {
-      border-bottom: 1px solid var(--slate-200);
-      background: rgba(239,246,255,0.8);
-      padding: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .price-top p { margin: 0; }
-    .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 22px;
-      border-top: 1px solid var(--slate-200);
-    }
-    .price-row:first-of-type { border-top: 0; }
-    .fee { color: var(--blue-700); font-weight: 700; font-size: 18px; }
-    .muted { color: var(--slate-600); }
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-    .steps { display: grid; gap: 14px; }
-    .step {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-    .step-num {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: var(--slate-900);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      flex: 0 0 40px;
-    }
-    .panel { padding: 28px; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-    .cta-box {
-      padding: 30px;
-      background: linear-gradient(135deg, var(--slate-900), var(--blue-700));
-      color: #fff;
-    }
-    .cta-strip {
-      background: linear-gradient(90deg, var(--blue-700), var(--sky-600));
-      color: #fff;
-      border-radius: 32px;
-      padding: 34px;
-      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .payment-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      align-items: center;
-      padding: 24px;
-      background: rgba(239,246,255,0.6);
-      margin-bottom: 30px;
-    }
-    .pay-actions { display: grid; gap: 12px; }
-    .sticky-mobile {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 50;
-      display: none;
-      gap: 10px;
-      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--slate-200);
-    }
-    .sticky-mobile .btn { flex: 1; padding: 14px 16px; }
-    .footer-space { height: 0; }
 
-    @media (max-width: 900px) {
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--navy-deep);
+      color:#fff;
+      font-size:.95rem;
+    }
+    .topbar-inner{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      padding:12px 0;
+      flex-wrap:wrap;
+    }
+    .topbar a{color:#fff}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(247,243,236,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .brand img{
+      width:54px;
+      height:54px;
+      object-fit:contain;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:50%;
+      padding:6px;
+    }
+    .brand-text strong{
+      display:block;
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      line-height:1;
+      font-weight:700;
+    }
+    .brand-text span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      font-size:.96rem;
+      color:var(--text);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary:hover{
+      background:var(--gold-dark);
+      transform:translateY(-1px);
+    }
+    .btn-secondary{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--text);
+    }
+    .btn-outline{
+      border:1px solid var(--gold);
+      color:var(--gold-dark);
+      background:#fff;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond',serif;
+      margin:0 0 12px;
+      line-height:1.05;
+      font-weight:700;
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(31,68,109,.78), rgba(31,68,109,.78)),
+        url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color:#fff;
+      padding:84px 0 72px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:.86rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(2.6rem,5vw,5rem);
+      max-width:11ch;
+    }
+
+    .hero p{
+      max-width:58ch;
+      font-size:1.06rem;
+      color:rgba(255,255,255,.92);
+      margin:0 0 24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .trust-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .trust-badge{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:.9rem;
+      color:#fff;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.97);
+      color:var(--text);
+      border-radius:30px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .portrait{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      margin-bottom:18px;
+      background:#ece7df;
+    }
+    .portrait img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+    }
+
+    .quick-points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .quick-points .point{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .quick-points strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    section{padding:72px 0}
+
+    .section-soft{
+      background:#fbf9f5;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:34px;
+    }
+
+    .section-head h2{
+      font-size:clamp(2rem,3vw,3.2rem);
+    }
+
+    .section-head p{
+      max-width:64ch;
+      margin:0 auto;
+      color:var(--muted);
+    }
+
+    .offer-grid,
+    .reviews-grid,
+    .steps-grid,
+    .contact-grid{
+      display:grid;
+      gap:22px;
+    }
+
+    .offer-grid{grid-template-columns:repeat(3,1fr)}
+    .reviews-grid{grid-template-columns:repeat(3,1fr)}
+    .steps-grid{grid-template-columns:repeat(3,1fr)}
+    .contact-grid{grid-template-columns:repeat(4,1fr)}
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      font-size:1.8rem;
+      margin-bottom:8px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .about-photo{
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#ece7df;
+    }
+    .about-photo img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+    }
+
+    .about-copy p{
+      margin:0 0 16px;
+      color:#3f3731;
+    }
+
+    .signature-box{
+      margin-top:18px;
+      padding:18px 20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-left:4px solid var(--gold);
+      border-radius:16px;
+    }
+
+    .review{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .stars{
+      color:var(--gold);
+      font-size:1.15rem;
+      letter-spacing:2px;
+      margin-bottom:12px;
+    }
+
+    .review p{
+      margin:0;
+      color:#3f3731;
+    }
+
+    .step-number{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:var(--gold);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
+    .booking-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .booking-box,
+    .booking-widget{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .payment-note{
+      margin-top:20px;
+      background:#faf6ee;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .cta-stack{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-item span{
+      display:block;
+      color:var(--muted);
+      font-size:.84rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:8px;
+    }
+
+    footer{
+      background:var(--navy-deep);
+      color:#fff;
+      padding:28px 0 90px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-note{
+      color:rgba(255,255,255,.76);
+      font-size:.9rem;
+      max-width:70ch;
+      margin-top:6px;
+    }
+
+    .mobile-sticky-cta{
+      display:none;
+    }
+
+    @media (max-width:1000px){
       .hero-grid,
-      .services,
-      .split,
       .about-grid,
-      .payment-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 28px; padding-top: 24px; }
-      .price-top, .price-row, .cta-strip, header { flex-direction: column; align-items: stretch; }
-      .cta-strip { text-align: left; }
+      .booking-wrap,
+      .offer-grid,
+      .reviews-grid,
+      .steps-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .portrait img,
+      .about-photo img{
+        height:auto;
+      }
     }
 
-    @media (max-width: 640px) {
-      .container { width: min(var(--max), calc(100% - 24px)); }
-      section { padding: 58px 0; }
-      .card, .service-card, .panel, .cta-box, .payment-grid, .cta-strip { padding: 22px; }
-      .lead, .section-copy { font-size: 16px; }
-      .price-row { align-items: flex-start; }
-      .sticky-mobile { display: flex; }
-      .footer-space { height: 92px; }
-      .btn { width: 100%; }
-      .actions { display: grid; }
+    @media (max-width:760px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        width:100%;
+        gap:14px;
+      }
+
+      .hero{
+        padding:62px 0 54px;
+      }
+
+      section{
+        padding:56px 0;
+      }
+
+      .brand-text strong{
+        font-size:1.6rem;
+      }
+
+      .quick-points{
+        grid-template-columns:1fr;
+      }
+
+      .booking-widget{
+        padding:12px;
+      }
+
+      .mobile-sticky-cta{
+        position:fixed;
+        bottom:14px;
+        left:14px;
+        right:14px;
+        z-index:1000;
+        display:block;
+      }
+
+      .mobile-sticky-cta a{
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:16px 18px;
+        border-radius:999px;
+        background:var(--gold);
+        color:#fff;
+        font-weight:700;
+        box-shadow:0 12px 25px rgba(0,0,0,.18);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="container">
-      <header>
-        <div class="brand">NS Law Firm PLLC</div>
-        <a class="btn btn-secondary" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Consultation</a>
-      </header>
 
-      <div class="hero-grid">
-        <div>
-          <div class="pill">Fully Virtual Immigration Support</div>
-          <h1>U.S. Immigration Support for Families</h1>
-          <p class="lead">NS Law Firm provides a streamlined, virtual experience focused on family-based immigration matters, with particular emphasis on marriage-based cases and clear, upfront attorney fee information.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://calendly.com/nsimmigrationlawfirm/30min">Schedule a Consultation</a>
-            <a class="btn btn-secondary" href="#pricing">View Pricing</a>
-            <a class="btn btn-secondary" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Petition Review</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="eyebrow">Why clients choose NS Law Firm</div>
-          <div class="feature-list">
-            <div class="feature"><span class="dot"></span><div>Virtual representation designed for busy couples and families</div></div>
-            <div class="feature"><span class="dot"></span><div>Clear, organized guidance throughout the process</div></div>
-            <div class="feature"><span class="dot"></span><div>Focused practice built around family-based immigration matters</div></div>
-            <div class="feature"><span class="dot"></span><div>Professional, modern client experience from consultation to filing</div></div>
-          </div>
-        </div>
-      </div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a href="mailto:Nadine.sheta@nslawpllc.com">Nadine.sheta@nslawpllc.com</a>
+      <a href="tel:8322744448">(832) 274-4448</a>
     </div>
   </div>
 
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="NS Law Firm logo">
+        <div class="brand-text">
+          <strong>NS Law Firm PLLC</strong>
+          <span>Virtual Immigration Representation</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Book</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-primary">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Trusted Support for Marriage & Family Immigration</div>
+        <h1>Clear, polished immigration guidance for couples and families.</h1>
+        <p>
+          NS Law Firm PLLC is a virtual immigration law firm focused on marriage-based immigration, family petitions, and waivers. Built for modern clients who want clarity, professionalism, and responsive support.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#book" class="btn btn-primary">Schedule Consultation</a>
+          <a href="#reviews" class="btn btn-secondary">See Reviews</a>
+        </div>
+
+        <div class="trust-row">
+          <div class="trust-badge">Virtual Firm</div>
+          <div class="trust-badge">Marriage-Based Cases</div>
+          <div class="trust-badge">Family Immigration</div>
+          <div class="trust-badge">Consultations Available</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="portrait">
+          <img src="nadine-hero.jpg" alt="Nadine Sheta">
+        </div>
+
+        <div class="quick-points">
+          <div class="point">
+            <strong>High-Touch Experience</strong>
+            Responsive, organized support from start to finish.
+          </div>
+          <div class="point">
+            <strong>Client-Focused</strong>
+            A calm, clear approach to complex immigration matters.
+          </div>
+          <div class="point">
+            <strong>Virtual Convenience</strong>
+            Built for busy clients across the U.S.
+          </div>
+          <div class="point">
+            <strong>Trusted Guidance</strong>
+            Professional representation with a personal feel.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why clients choose NS Law Firm PLLC</h2>
+        <p>
+          Clients consistently mention professionalism, communication, and feeling supported throughout the process.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“One of the best in the market when everyone wanted top dollars for my case that became complex Ms. Sheta educated me, helped me to take a cheaper route and her fees were very very reasonable. She’s so professional, keeps you informed and relaxed. I want to thank you so much for your hard work and for riding with me on my journey. Thanks again.”</p>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Nadine has a super nice personality, she helped me step by step with my application and evidence documents. We got lucky that my case approved in short time. I highly recommend her.”</p>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Miss Nadine was so helpful throughout the whole process, always answered our questions and her professionalism and work showed when we got our green card request in just 2 and a half months! I’d recommend to anyone who is looking for an immigration attorney.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="services">
     <div class="container">
-      <div class="eyebrow" style="color: var(--blue-700);">Services</div>
-      <h2>Focused, Virtual Immigration Support</h2>
-      <p class="section-copy">Designed for clients who want clarity, structure, and a professional process.</p>
+      <div class="section-head">
+        <h2>How we help</h2>
+        <p>
+          Focused immigration representation for families and couples seeking a more organized, supportive legal experience.
+        </p>
+      </div>
 
-      <div class="services">
-        <div class="service-card">
-          <h3>Marriage-Based Green Cards</h3>
-          <p>Support for couples preparing adjustment of status and related family-based filings with a clear, organized process.</p>
+      <div class="offer-grid">
+        <div class="card">
+          <h3>Marriage-Based Immigration</h3>
+          <p>Guidance for couples pursuing green cards through marriage, including adjustment of status and related filings.</p>
         </div>
-        <div class="service-card">
-          <h3>Family Immigration</h3>
-          <p>Virtual immigration support for qualifying family-based petitions and related applications.</p>
+
+        <div class="card">
+          <h3>Family Petitions</h3>
+          <p>Support for qualifying family-based immigration matters with careful preparation and clear next steps.</p>
         </div>
-        <div class="service-card">
-          <h3>Waivers &amp; Complex Cases</h3>
-          <p>Strategy-focused support for unlawful presence waivers, consular processing matters, and other more involved filings.</p>
+
+        <div class="card">
+          <h3>Waivers & Complex Cases</h3>
+          <p>Thoughtful legal strategy for cases involving unlawful presence, inadmissibility issues, and filing complications.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="pricing">
+  <section id="about" class="section-soft">
     <div class="container">
-      <div class="eyebrow" style="color: var(--blue-700);">Transparent Attorney Fees</div>
-      <h2>Clear pricing for common case types</h2>
-      <p class="section-copy">Attorney fees shown below do not include government filing fees unless specifically stated.</p>
+      <div class="section-head">
+        <h2>Meet Nadine Sheta</h2>
+        <p>
+          A virtual immigration attorney focused on delivering a polished, client-centered experience.
+        </p>
+      </div>
 
-      <div class="price-shell">
-        <div class="price-top">
-          <div>
-            <p style="font-weight:700; color: var(--slate-900);">Need a Petition Review instead?</p>
-            <p class="muted">Book the dedicated Petition Review option here.</p>
-          </div>
-          <a class="btn btn-blue" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Book Petition Review</a>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="nadine-about.jpg" alt="Attorney Nadine Sheta">
         </div>
 
-        <div class="price-row"><div>Marriage Adjustment of Status with Legal Entry</div><div class="fee">$3,000</div></div>
-        <div class="price-row"><div>Marriage without Legal Entry – I-130</div><div class="fee">$1,500</div></div>
-        <div class="price-row"><div>I-601 Waiver for Unlawful Presence</div><div class="fee">$4,500</div></div>
-        <div class="price-row"><div>Consular Process</div><div class="fee">$1,500</div></div>
-        <div class="price-row"><div>VAWA Based on Abuse</div><div class="fee">$4,500</div></div>
-        <div class="price-row"><div>Removal of Conditions</div><div class="fee">$2,000</div></div>
-        <div class="price-row"><div>Removal of Conditions with Waiver</div><div class="fee">$4,500</div></div>
-        <div class="price-row"><div>Naturalization</div><div class="fee">$2,500</div></div>
-        <div class="price-row"><div>Naturalization with Criminal Record</div><div class="fee">$4,500</div></div>
-        <div class="price-row"><div>Military Parole in Place</div><div class="fee">$4,500</div></div>
-        <div class="price-row"><div>Parent Adjustment of Status</div><div class="fee">$2,500 per parent</div></div>
-        <div class="price-row"><div>K-1 Fiancée Visa</div><div class="fee">$2,000</div></div>
-        <div class="price-row"><div>K-1 Adjustment of Status</div><div class="fee">$2,000</div></div>
-        <div class="price-row"><div>EB-2 NIW</div><div class="fee">$6,000</div></div>
-        <div class="price-row"><div>EB-2 NIW Adjustment of Status</div><div class="fee">$2,500</div></div>
-        <div class="price-row"><div>F-1 Student Visa</div><div class="fee">$2,500</div></div>
-      </div>
-    </div>
-  </section>
+        <div class="about-copy">
+          <p>
+            Nadine Sheta is the founder of NS Law Firm PLLC and a graduate of <strong>South Texas College of Law</strong>. Her practice focuses on immigration matters involving couples, families, and individuals seeking lawful status in the United States.
+          </p>
 
-  <section style="background: var(--slate-50);">
-    <div class="container split">
-      <div>
-        <div class="eyebrow">The Process</div>
-        <h2>A simpler way to move your case forward</h2>
-        <p class="section-copy">The goal is a process that feels organized, efficient, and easy to navigate from wherever you are.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><div>Book a consultation</div></div>
-        <div class="step"><div class="step-num">2</div><div>Get a clear case strategy</div></div>
-        <div class="step"><div class="step-num">3</div><div>Receive a streamlined virtual process</div></div>
-        <div class="step"><div class="step-num">4</div><div>Move forward with confidence</div></div>
+          <p>
+            The firm is designed for clients who value professionalism, communication, and a clear process. With a fully virtual model, NS Law Firm PLLC combines convenience with a more refined, personalized legal experience.
+          </p>
+
+          <p>
+            Whether you are preparing a marriage-based case, a family petition, or a more complex immigration filing, the goal is simple: provide focused guidance in an organized, approachable environment.
+          </p>
+
+          <div class="signature-box">
+            <strong>Practice focus:</strong><br>
+            Marriage-based immigration, family-based petitions, adjustment of status, waivers, and related immigration matters.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="payment-grid panel">
-        <div>
-          <div class="eyebrow" style="color: var(--blue-700);">Pay for Consultation</div>
-          <h2 style="font-size: clamp(1.6rem, 2.6vw, 2.3rem);">Prefer to pay online before booking?</h2>
-          <p class="section-copy" style="margin-top: 10px; font-size: 16px;">Use the same payment flow style as your ImmiKit setup. Replace the placeholder links below with your live checkout links before publishing.</p>
-        </div>
-        <div class="pay-actions">
-          <a class="btn btn-primary" href="#">Pay for Consultation</a>
-          <a class="btn btn-secondary" href="#">Pay with PayPal</a>
-        </div>
+      <div class="section-head">
+        <h2>What working with us looks like</h2>
+        <p>
+          A simple, modern process designed to make getting started easier.
+        </p>
       </div>
 
-      <div class="about-grid panel">
-        <div>
-          <div class="eyebrow" style="color: var(--blue-700);">About</div>
-          <h2>A modern, client-centered virtual law firm</h2>
-          <p class="section-copy">NS Law Firm focuses on helping clients navigate family-based immigration matters through a professional and accessible online experience. The firm is designed for people who want high-touch support without the limitations of a traditional office model.</p>
+      <div class="steps-grid">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Book</h3>
+          <p>Choose your consultation time directly through the scheduler below.</p>
         </div>
-        <div class="cta-box">
-          <div class="eyebrow" style="color: #bfdbfe;">Virtual Consultations</div>
-          <h3 style="font-size: 28px; margin: 16px 0 0;">Ready to get clarity on your case?</h3>
-          <p style="color: rgba(255,255,255,0.84); margin-top: 14px;">Start with a consultation to understand your options and the best next step for your situation.</p>
-          <div style="margin-top: 22px;"><a class="btn" style="background:#fff;color:var(--slate-900);" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Now</a></div>
+
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>Pay</h3>
+          <p>Use the secure payment link to confirm your consultation quickly.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>Meet</h3>
+          <p>Get strategic guidance tailored to your immigration matter and next steps.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="padding-top: 0;">
+  <section id="book" class="section-soft">
     <div class="container">
-      <div class="cta-strip">
-        <div>
-          <div class="eyebrow" style="color: rgba(255,255,255,0.82);">NS Law Firm PLLC</div>
-          <h2 style="margin-top: 8px; color:#fff;">Book your consultation today</h2>
-          <p style="margin: 12px 0 0; color: rgba(255,255,255,0.86); max-width: 720px;">Clear guidance. Virtual convenience. A professional start to your immigration process.</p>
+      <div class="section-head">
+        <h2>Book your consultation</h2>
+        <p>
+          Reserve your time directly on this page, then confirm securely with payment.
+        </p>
+      </div>
+
+      <div class="booking-wrap">
+        <div class="booking-box">
+          <h3 style="font-size:2rem;">Consultation Booking</h3>
+          <p>Select an available time using the scheduler.</p>
+          <p>Your appointment is confirmed once the <strong>$100 consultation fee</strong> is paid.</p>
+
+          <div class="cta-stack">
+            <a href="https://buy.stripe.com/bJe28r8QQbQ1adX4b78Vi01" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pay $100 Consultation Fee</a>
+            <a href="#booking-calendar" class="btn btn-outline">Then Choose Your Time Below</a>
+          </div>
+
+          <div class="payment-note">
+            <strong>Simple 2-step process</strong><br><br>
+            1. Pay the $100 consultation fee using the secure payment button above.<br>
+            2. Choose your appointment time in the calendar.<br><br>
+            Questions?<br>
+            <a href="mailto:Nadine.sheta@nslawpllc.com"><strong>Nadine.sheta@nslawpllc.com</strong></a><br>
+            <a href="tel:8322744448"><strong>(832) 274-4448</strong></a>
+          </div>
         </div>
-        <a class="btn" style="background:#fff;color:var(--slate-900);" href="https://calendly.com/nsimmigrationlawfirm/30min">Schedule Consultation</a>
+
+        <div class="booking-widget" id="booking-calendar">
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/nsimmigrationlawfirm/30min"
+               style="min-width:320px;height:700px;">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="footer-space"></div>
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Connect with us</h2>
+        <p>
+          Reach out directly or follow along on social media.
+        </p>
+      </div>
 
-  <div class="sticky-mobile">
-    <a class="btn btn-primary" href="https://calendly.com/nsimmigrationlawfirm/30min">Book Consult</a>
-    <a class="btn btn-blue" href="https://calendly.com/nsimmigrationlawfirm/new-meeting">Petition Review</a>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:Nadine.sheta@nslawpllc.com">Nadine.sheta@nslawpllc.com</a>
+        </div>
+
+        <div class="contact-item">
+          <span>Phone</span>
+          <a href="tel:8322744448">(832) 274-4448</a>
+        </div>
+
+        <div class="contact-item">
+          <span>TikTok</span>
+          <a href="https://www.tiktok.com/@nsimmigrationz?_r=1&_t=ZT-95OcC1u6MhR" target="_blank" rel="noopener noreferrer">@nsimmigrationz</a>
+        </div>
+
+        <div class="contact-item">
+          <span>Instagram</span>
+          <a href="https://www.instagram.com/nsimmigrationlawfirm?igsh=MWgyYm0wcDFxN3hpNg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">@nsimmigrationlawfirm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>NS Law Firm PLLC</strong>
+        <div class="footer-note">
+          Information on this website is for general informational purposes only and does not create an attorney-client relationship.
+        </div>
+      </div>
+
+      <div>
+        <a href="https://www.tiktok.com/@nsimmigrationz?_r=1&_t=ZT-95OcC1u6MhR" target="_blank" rel="noopener noreferrer" style="margin-right:14px;">TikTok</a>
+        <a href="https://www.instagram.com/nsimmigrationlawfirm?igsh=MWgyYm0wcDFxN3hpNg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style="margin-right:14px;">Instagram</a>
+        <a href="mailto:Nadine.sheta@nslawpllc.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky-cta">
+    <a href="#book">Book Consultation</a>
   </div>
+
 </body>
 </html>
