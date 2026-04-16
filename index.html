@@ -80,15 +80,7 @@
       align-items:center;
       gap:14px;
     }
-    .brand img{
-      width:54px;
-      height:54px;
-      object-fit:contain;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:50%;
-      padding:6px;
-    }
+
     .brand-text strong{
       display:block;
       font-family:'Cormorant Garamond',serif;
@@ -155,14 +147,14 @@
     .hero{
       background:
         linear-gradient(rgba(31,68,109,.78), rgba(31,68,109,.78)),
-        url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color:#fff;
       padding:84px 0 72px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:1fr;
       gap:34px;
       align-items:center;
     }
@@ -220,19 +212,7 @@
       border-radius:30px;
       padding:24px;
       box-shadow:var(--shadow);
-    }
-
-    .portrait{
-      border-radius:22px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      margin-bottom:18px;
-      background:#ece7df;
-    }
-    .portrait img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
+      max-width:760px;
     }
 
     .quick-points{
@@ -274,7 +254,6 @@
       color:var(--muted);
     }
 
-    .offer-grid,
     .reviews-grid,
     .steps-grid,
     .contact-grid{
@@ -282,7 +261,6 @@
       gap:22px;
     }
 
-    .offer-grid{grid-template-columns:repeat(3,1fr)}
     .reviews-grid{grid-template-columns:repeat(3,1fr)}
     .steps-grid{grid-template-columns:repeat(3,1fr)}
     .contact-grid{grid-template-columns:repeat(4,1fr)}
@@ -305,24 +283,9 @@
       color:var(--muted);
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:34px;
-      align-items:center;
-    }
-
-    .about-photo{
-      overflow:hidden;
-      border-radius:24px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:#ece7df;
-    }
-    .about-photo img{
-      width:100%;
-      height:520px;
-      object-fit:cover;
+    .about-copy{
+      max-width:850px;
+      margin:0 auto;
     }
 
     .about-copy p{
@@ -357,6 +320,39 @@
     .review p{
       margin:0;
       color:#3f3731;
+    }
+
+    .pricing-list{
+      max-width:850px;
+      margin:0 auto;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .pricing-list ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .pricing-list li{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+      border-bottom:1px solid var(--line);
+      font-size:1.02rem;
+    }
+
+    .pricing-list li:last-child{
+      border-bottom:none;
+    }
+
+    .pricing-list strong{
+      font-weight:600;
     }
 
     .step-number{
@@ -446,19 +442,11 @@
     }
 
     @media (max-width:1000px){
-      .hero-grid,
-      .about-grid,
       .booking-wrap,
-      .offer-grid,
       .reviews-grid,
       .steps-grid,
       .contact-grid{
         grid-template-columns:1fr;
-      }
-
-      .portrait img,
-      .about-photo img{
-        height:auto;
       }
     }
 
@@ -487,6 +475,11 @@
 
       .quick-points{
         grid-template-columns:1fr;
+      }
+
+      .pricing-list li{
+        flex-direction:column;
+        gap:6px;
       }
 
       .booking-widget{
@@ -529,7 +522,6 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="Law Firm Logo.png" alt="NS Law Firm logo" class="logo">
         <div class="brand-text">
           <strong>NS Law Firm PLLC</strong>
           <span>Virtual Immigration Representation</span>
@@ -538,6 +530,7 @@
 
       <nav class="nav-links">
         <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="#reviews">Reviews</a>
         <a href="#book">Book</a>
@@ -558,7 +551,7 @@
 
         <div class="hero-actions">
           <a href="#book" class="btn btn-primary">Schedule Consultation</a>
-          <a href="#reviews" class="btn btn-secondary">See Reviews</a>
+          <a href="#pricing" class="btn btn-secondary">View Pricing</a>
         </div>
 
         <div class="trust-row">
@@ -570,10 +563,6 @@
       </div>
 
       <div class="hero-card">
-        <div class="portrait">
-          <img src="nadine-hero.jpg" alt="Nadine Sheta">
-        </div>
-
         <div class="quick-points">
           <div class="point">
             <strong>High-Touch Experience</strong>
@@ -633,21 +622,17 @@
         </p>
       </div>
 
-      <div class="offer-grid">
-        <div class="card">
-          <h3>Marriage-Based Immigration</h3>
-          <p>Guidance for couples pursuing green cards through marriage, including adjustment of status and related filings.</p>
-        </div>
-
-        <div class="card">
-          <h3>Family Petitions</h3>
-          <p>Support for qualifying family-based immigration matters with careful preparation and clear next steps.</p>
-        </div>
-
-        <div class="card">
-          <h3>Waivers & Complex Cases</h3>
-          <p>Thoughtful legal strategy for cases involving unlawful presence, inadmissibility issues, and filing complications.</p>
-        </div>
+      <div class="pricing-list">
+        <ul>
+          <li><span>Marriage Adjustment of Status with Legal Entry</span><strong>$3,000</strong></li>
+          <li><span>Marriage without Legal Entry — I-130</span><strong>$1,500</strong></li>
+          <li><span>I-601 Waiver for Unlawful Presence</span><strong>$4,500</strong></li>
+          <li><span>Consular Processing</span><strong>$2,000</strong></li>
+          <li><span>Removal of Conditions with Waiver</span><strong>$4,500</strong></li>
+          <li><span>Naturalization</span><strong>$2,000</strong></li>
+          <li><span>Naturalization with Criminal Record</span><strong>$4,500</strong></li>
+          <li><span>Fiancée Visa</span><strong>$2,500</strong></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -661,28 +646,22 @@
         </p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-photo">
-          <img src="nadine-about.jpg" alt="Attorney Nadine Sheta">
-        </div>
+      <div class="about-copy">
+        <p>
+          Nadine Sheta is the founder of NS Law Firm PLLC and a graduate of <strong>South Texas College of Law</strong>. Her practice focuses on immigration matters involving couples, families, and individuals seeking lawful status in the United States.
+        </p>
 
-        <div class="about-copy">
-          <p>
-            Nadine Sheta is the founder of NS Law Firm PLLC and a graduate of <strong>South Texas College of Law</strong>. Her practice focuses on immigration matters involving couples, families, and individuals seeking lawful status in the United States.
-          </p>
+        <p>
+          The firm is designed for clients who value professionalism, communication, and a clear process. With a fully virtual model, NS Law Firm PLLC combines convenience with a more refined, personalized legal experience.
+        </p>
 
-          <p>
-            The firm is designed for clients who value professionalism, communication, and a clear process. With a fully virtual model, NS Law Firm PLLC combines convenience with a more refined, personalized legal experience.
-          </p>
+        <p>
+          Whether you are preparing a marriage-based case, a family petition, or a more complex immigration filing, the goal is simple: provide focused guidance in an organized, approachable environment.
+        </p>
 
-          <p>
-            Whether you are preparing a marriage-based case, a family petition, or a more complex immigration filing, the goal is simple: provide focused guidance in an organized, approachable environment.
-          </p>
-
-          <div class="signature-box">
-            <strong>Practice focus:</strong><br>
-            Marriage-based immigration, family-based petitions, adjustment of status, waivers, and related immigration matters.
-          </div>
+        <div class="signature-box">
+          <strong>Practice focus:</strong><br>
+          Marriage-based immigration, family-based petitions, adjustment of status, waivers, and related immigration matters.
         </div>
       </div>
     </div>
